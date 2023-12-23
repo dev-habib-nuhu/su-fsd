@@ -39,7 +39,8 @@ export default function IndexPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/items');
+        const url = `${process.env.NEXT_PUBLIC_BASE_URL}/api/items`
+        const response = await fetch(url);
         const data = await response.json();
   
         setItems(data?.data);
