@@ -12,7 +12,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         const sortedData = sortData(csvData, sortBy, sortOrder)
         return  NextResponse.json({ data: sortedData }, { status: 200})
     } catch (error) {
-        console.error('Error: ', error);
+        console.error('Error:', error);
         return NextResponse.json({ message: 'Internal server error'}, { status: 500 })
     }
 }
